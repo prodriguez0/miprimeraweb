@@ -1,0 +1,157 @@
+:root {
+    --color-1: #7d8b9e;
+    --color-2: #111827;
+    --color-3: #3aff75;
+    --color-4: #ec3838;
+    --color-5: #FB5607;
+    --color-6: #a09ca1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+#principal {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(2, 120px);
+    gap: 10px;
+    margin: 20px;
+}
+
+#principal article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article {
+    border: 1px solid black;
+    text-align: center;
+    padding: 20px;
+}
+
+.fila1 { background-color: var(--color-1); }
+.fila2 { background-color: var(--color-2); }
+.fila3 { background-color: var(--color-3); }
+.fila4 { background-color: var(--color-4); }
+.fila5 { background-color: var(--color-5); }
+.fila6 { background-color: var(--color-6); }
+
+.impar,
+.par {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article:nth-child(odd) {
+    flex-direction: column-reverse;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    background-color: #111827;
+
+    justify-content: space-around;
+    align-items: center;
+    max-width: 100dvw;
+
+    height: 2rem;
+}
+
+nav ul li {
+    border: 1px solid white;
+    font-size: 0.8rem; /* rem multiplica el valor por el tamaño de letra del body */
+    padding: 0.5em; /* em multiplica el valor por el tamaño de letra del elemnto */
+    width: 8rem;
+    text-align: center;
+}
+
+nav ul li:hover {
+    background-color: rgb(234, 48, 48);
+}
+
+nav ul li a {
+    text-decoration: none; /* quitamos lo subrayado de los enlaces */
+    color: rgb(185, 190, 200);
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    text-decoration: underline; /* añadimos subrayado al pasar el raton */
+}
+
+
+section#indice img {
+    max-width: 200px;
+}
+
+/*grd nos permite organizar los eleemnetos en dos dimensiones X e Y, osea filas y columnas*/
+/* section#indice {
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-rows: auto auto;
+}
+ */
+section#indice {
+    display: grid;
+    grid-template-areas: 
+    "sidebar guantes     guantes     guantes     cascos cascos cascos cascos cascos cascos"
+    "sidebar guantes     guantes     guantes     cascos cascos cascos cascos cascos cascos"
+    "sidebar guantes     guantes     guantes     vendas  vendas  vendas  vendas  vendas  vendas"
+    "sidebar ropa ropa ropa vendas  vendas  vendas  vendas  vendas  vendas"
+    "sidebar ropa ropa ropa vendas  vendas  vendas  vendas  vendas  vendas"
+    "sidebar ropa ropa ropa botas  botas  botas  botas  botas  botas"
+    "sidebar ropa ropa ropa botas  botas  botas  botas  botas  botas"
+    ;
+}
+
+div.indice1_item img {
+    max-width: 250px;
+}
+
+div#guantes{
+    grid-area: guantes;
+    background-color: #ffa200;
+    text-align: center;
+}
+
+div#vendas{
+    grid-area: vendas;
+    background-color: #00A6FF;
+    text-align: center;
+}
+
+div#cascos{
+    grid-area: cascos;
+    background-color: #b7b928;
+    text-align: center;
+}
+
+div#botas{
+    grid-area: botas;
+    background-color: #E10600;
+    text-align: center;
+}
+
+div#ropa{
+    grid-area: ropa;
+    background-color: #FFD60A;
+    text-align: center;
+}
+
+
+#sidebar {
+    display: grid;
+    grid-template-columns: 150px 1fr; 
+    gap: 10px;
+}
